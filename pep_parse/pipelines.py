@@ -21,7 +21,7 @@ class PepParsePipeline:
         time = current_time.strftime('%Y-%m-%d_%H-%M-%S')
         file_name = f'status_summary_{time}.csv'
         file_path = self.results_dir / file_name
-        self.peps.update({'Total': sum(self.peps.values())})
+        self.peps['Total'] = sum(self.peps.values())
         result = self.peps.items()
         with open(file_path, 'w', encoding='utf-8') as f:
             f.writelines([
