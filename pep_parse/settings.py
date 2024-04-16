@@ -13,3 +13,6 @@ FEEDS = {
         'overwrite': True
     },
 }
+
+NAME_SPIDER = 'pep'
+URL = 'peps.python.org'

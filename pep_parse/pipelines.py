@@ -22,10 +22,9 @@ class PepParsePipeline:
         file_name = f'status_summary_{time}.csv'
         file_path = self.results_dir / file_name
         result = self.peps.items()
-        total = sum(self.peps.values())
         with open(file_path, 'w', encoding='utf-8') as f:
             f.writelines([
                 'Статус, Количество\n',
                 *[f'{status}, {amount}\n' for status, amount in result],
-                f'Total, {total}\n'
+                f'Total, {sum(self.peps.values())}\n'
             ])
